@@ -49,6 +49,8 @@ int OnInit()
       EventSetTimer(InpTimerSeconds);
 
    LogInfo("Initialization complete.");
+   LogInfo("Build 002 verification complete.");   
+   LogInfo("Waiting for market data...");
 
    return(INIT_SUCCEEDED);
 }

@@ -21,9 +21,6 @@ private:
    bool m_lowerHigh;
    bool m_lowerLow;
 
-   bool m_bullishCHOCH;
-   bool m_bearishCHOCH;
-
    int m_lookback;
 
 public:
@@ -78,10 +75,6 @@ public:
 
       m_lowerHigh  = (m_currentSwingHigh < m_previousSwingHigh);
       m_lowerLow   = (m_currentSwingLow < m_previousSwingLow);
-
-
-      m_bullishCHOCH = (m_lowerLow && m_higherHigh);
-      m_bearishCHOCH = (m_higherHigh && m_lowerLow);
    }
 
    double CurrentSwingHigh() const
@@ -114,12 +107,7 @@ public:
       return(m_lowerLow);
    }
 
-   
-   bool HasBullishCHOCH() const { return m_bullishCHOCH; }
-   bool HasBearishCHOCH() const { return m_bearishCHOCH; }
-   bool HasCHOCH() const { return (m_bullishCHOCH || m_bearishCHOCH); }
-
-void PrintStructure()
+   void PrintStructure()
    {
       LogLine();
 
